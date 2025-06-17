@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+
+/* 3. Estilos Generales */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: var(--color-fondo-body);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 1.25rem; /* 20px */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* 4. Contenedor Principal (Estilos base para teléfonos/móvil - MENOS DE 768px) */
+.contenedor {
+  width: 20rem; /* El contenedor ocupa 20rem por defecto para móviles */
+  height: 43rem;
+  background: var(--color-fondo-contenedor);
+  padding: 1.5rem; /* 24px */
+  border-radius: 0.75rem; /* 12px */
+  box-shadow: 0 0.25rem 0.75rem var(--color-sombra);
+  transition: background-color 0.3s;
+  /* Centrar el contenedor */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 5. Título con la nueva fuente */
+#titulo-principal {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  color: var(--color-titulo);
+  font-size: 2rem; /* Tamaño de fuente base para móvil */
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+}
+
+/* 6. Formulario y Elementos */
+#formulario-tarea {
+  display: flex;
+  gap: 0.625rem; /* 10px */
+  margin-bottom: 0.625rem;
+  justify-content: center;
+  align-items: center;
+}
+
+#tarea-input {
+  flex-grow: 1;
+  padding: 0.75rem; /* 12px */
+  border: 1px solid var(--color-borde);
+  border-radius: 0.5rem; /* 8px */
+  background-color: var(--color-borde);
+  color: var(--color-texto);
+  font-size: 1rem;
+  border-color: #fffefe; /* Borde más oscuro en modo oscuro */
+}
+
+#boton-agregar-tarea {
+  background-color: var(--color-boton-agregar);
+  color: var(--color-texto-boton);
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.5rem;
+  width: 3.125rem; /* 50px */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#boton-agregar-tarea:hover {
+  background-color: var(--color-boton-agregar-hover);
+}
+
+.mensaje-error {
+  color: var(--color-boton-eliminar);
+  font-size: 0.9rem;
+  text-align: center;
+  display: none;
+  margin-bottom: 1rem;
+}
+
+/* 7. Lista de Tareas y Contadores */
+#lista-tareas {
+  width: 100%; /* Ocupa todo el ancho disponible del contenedor */
+  height: 20rem; /* Ajustado para ocupar el espacio restante */
+  overflow-y: auto; /* */
+  padding: 0.625rem; /* */
+  border: 1px solid var(--color-borde); /* */
+  border-radius: 0.5rem; /* 8px */
+  background-color: var(--color-fondo-contenedor); /* */
+  box-shadow: inset 0 0.25rem 0.75rem var(--color-sombra); /* */
+  margin-bottom: 1.25rem; /* */
+  list-style: none; /* Eliminar viñetas de la lista */
+  padding-left: 0; /* Eliminar padding por defecto de la lista */
+}
+
+.item-tarea {
+  display: flex; /* */
+  align-items: center; /* */
+  gap: 0.625rem; /* */
+  padding: 0.625rem; /* */
+  border-bottom: 1px solid var(--color-borde); /* */
+}
+
+.item-tarea:last-child {
+  border-bottom: none; /* */
+}
+
+.texto-tarea {
+  flex-grow: 1; /* */
+  word-break: break-word; /* */
+}
+
+.texto-tarea.completada {
+  text-decoration: line-through; /* */
+  opacity: 0.6; /* */
+}
+
+.boton-completar,
+.boton-eliminar {
+  border: none; /* */
+  border-radius: 50%; /* */
+  width: 1.875rem; /* 30px */
+  height: 1.875rem; /* */
+  display: flex; /* */
+  align-items: center; /* */
+  justify-content: center; /* */
+  cursor: pointer; /* */
+  color: white; /* */
+  transition: background-color 0.3s; /* */
+  flex-shrink: 0; /* Evita que los botones se encojan */
+}
+
+.boton-completar {
+  background-color: var(--color-boton-completar); /* */
+}
+.boton-completar:hover {
+  background-color: var(--color-boton-completar-hover); /* */
+}
+
+.boton-eliminar {
+  background-color: var(--color-boton-eliminar); /* */
+}
+.boton-eliminar:hover {
+  background-color: var(--color-boton-eliminar-hover); /* */
+}
+
+#contenedor-contador-tareas {
+  border-top: 1px solid var(--color-borde); /* */
+  padding-top: 1rem; /* */
+  margin-top: 1.25rem; /* */
+  font-size: 0.9rem; /* */
+  /* Alineación de los contadores */
+  display: flex; /* */
+  justify-content: space-between; /* */
+  padding: 1rem; /* */
+  border-radius: 4px; /* */
+  border: 1px solid var(--color-borde); /* */
+}
+
+/* ==============================================
+   8. DISEÑO RESPONSIVO CON @MEDIA Y REM
+   ============================================== */
+
+/* Para tablets y pantallas medianas (de 768px a 1023px) */
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+  /* 48rem = 768px, 63.9375rem = 1023px */
+  .contenedor {
+    width: 35rem; /* Un ancho mayor para tablets */
+    height: auto; /* Dejar que la altura se ajuste al contenido */
+  }
+
+  #titulo-principal {
+    font-size: 2.5rem; /* Ajustar el tamaño del título */
+  }
+
+  /* Puedes ajustar otros elementos aquí si es necesario para tablets */
+}
+
+/* Para computadoras y pantallas grandes (1024px en adelante) */
+@media (min-width: 64rem) {
+  /* 64rem = 1024px */
+  .contenedor {
+    width: 40rem; /* Un ancho ligeramente mayor para escritorios o el mismo que tablets si prefieres */
+    height: auto; /* Dejar que la altura se ajuste al contenido */
+  }
+
+  #titulo-principal {
+    font-size: 2.8rem; /* Ajustar el tamaño del título para pantallas grandes */
+  }
+}

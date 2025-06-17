@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="over.css" />
+  </head>
+
+  <body>
+    <main id="principal">
+      <div class="contenedor">
+        <h1 id="titulo-principal">LISTA DE TAREAS</h1>
+        <form id="formulario-tarea">
+          <input
+            type="text"
+            id="tarea-input"
+            placeholder="Añadir una tarea"
+            required
+          />
+          <button type="submit" id="boton-agregar-tarea">+</button>
+        </form>
+        <div>
+          <p class="mensaje-error" id="mensaje-error-tarea">
+            DEBE COLOCAR UNA TAREA
+          </p>
+        </div>
+        <ul id="lista-tareas"></ul>
+        <div id="contenedor-contador-tareas">
+          <p class="contador-tarea" id="total-tareas">TOTAL DE TAREAS: 0</p>
+          <p class="contador-tarea" id="tareas-completadas">
+            TAREAS COMPLETADAS: 0
+          </p>
+          <p class="contador-tarea" id="tareas-incompletas">
+            TAREAS INCOMPLETAS: 0
+          </p>
+        </div>
+      </div>
+    </main>
+    <template id="plantilla-tarea">
+      <li class="item-tarea">
+        <button class="boton-completar">✔</button>
+        <p class="texto-tarea"></p>
+        <button class="boton-eliminar">✖</button>
+      </li>
+    </template>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="index1.js"></script>
+  </body>
+</html>

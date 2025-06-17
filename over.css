@@ -1,0 +1,60 @@
+/* Texto responsivo */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+  font-size: 1rem;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 2. Variables de Color (Modo Claro y Oscuro) */
+:root {
+  /* Tema Claro (por defecto) */
+  --color-fondo-body: #f0f4f8;
+  --color-fondo-contenedor: #ffffff;
+  --color-sombra: rgba(0, 0, 0, 0.1);
+  --color-titulo: #1e88e5;
+  --color-texto: #333333;
+  --color-borde: #d1d5db;
+  --color-boton-agregar: #1e88e5;
+  --color-boton-agregar-hover: #1565c0;
+  --color-boton-completar: #2e7d32;
+  --color-boton-completar-hover: #1b5e20;
+  --color-boton-eliminar: #d32f2f;
+  --color-boton-eliminar-hover: #c62828;
+  --color-texto-boton: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Tema Oscuro (se activa automáticamente) */
+    --color-fondo-body: #121212;
+    --color-fondo-contenedor: #1e1e1e;
+    --color-sombra: rgba(255, 255, 255, 0.1);
+    --color-titulo: #64b5f6;
+    --color-texto: #e0e0e0;
+    --color-borde: #424242;
+    --color-boton-agregar: #64b5f6;
+    --color-boton-agregar-hover: #90caf9;
+    --color-boton-completar: #66bb6a;
+    --color-boton-completar-hover: #81c784;
+    --color-boton-eliminar: #ef5350;
+    --color-boton-eliminar-hover: #e57373;
+    --color-texto-boton: #121212;
+  }
+}
+
+:root {
+  color-scheme: light dark;
+  --color-fondo: light-dark(white, black);
+  --color-borde: light-dark(#d6d9dc, #515354);
+  --color-texto: light-dark(black, white);
+  --color-texto-boton: light-dark(white, black);
+  --ancho-pagina: 80rem;
+}
